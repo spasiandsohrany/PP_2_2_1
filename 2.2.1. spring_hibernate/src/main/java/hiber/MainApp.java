@@ -19,8 +19,7 @@ public class MainApp {
         User user1 = context.getBean(User.class);
         userService.add(user1);
 
-        User users = userService.getUserByModelAndSeries("Mersedes", 1);
-        System.out.println(users.toString());
+        System.out.println(userService.getUserByModelAndSeries("Mersedes", 1));
 
         List<User> users2 = userService.getlistUsers();
         for (User user : users2) {
