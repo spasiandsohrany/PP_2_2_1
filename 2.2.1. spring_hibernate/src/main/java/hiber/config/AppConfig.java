@@ -21,7 +21,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
+@ComponentScan("hiber")
 public class AppConfig {
 
     @Autowired
@@ -65,6 +65,8 @@ public class AppConfig {
 
     @Bean
     public User user1() {
-        return new User("User1", "Lastname1", "user1@mail.ru");
+        User user = new User("User1", "Lastname1", "user1@mail.ru");
+        user.setCar(car1());
+        return user;
     }
 }

@@ -1,7 +1,5 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -33,13 +31,14 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+
     }
 
     public Car getCar() {
         return car;
     }
 
-    @Autowired
+
     public void setCar(Car car) {
         this.car = car;
         car.setUser(this);
